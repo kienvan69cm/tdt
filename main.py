@@ -108,85 +108,14 @@ def req8(fx, n, x0, eps):
 
 
 def main():
-    with open("input.txt", mode="r") as f:
-        lines = f.readlines()
-    with open("output.txt", mode="w") as f:
-        def cau1():
-            line1 = lines[0]
-            fx = line1.split(", ")[0]
-            gx = line1.split(", ")[1]
-            a = int(line1.split(", ")[2])
-            f.write(str(req1(fx, gx, a))[1:-1])
-            f.write("\n")
-        cau1()
-
-        def cau2():
-            line2 = lines[1]
-            fxyz = line2.split(", ")[0]
-            a1 = int(line2.split(", ")[1])
-            a2 = int(line2.split(", ")[2])
-            a3 = int(line2.split(", ")[3])
-            f.write(str(req2(fxyz, a1, a2, a3)))
-            f.write("\n")
-        cau2()
-
-        def cau3():
-            line3 = lines[2]
-            wxyz = line3.split(", ")[0]
-            xt = line3.split(", ")[1]
-            yt = line3.split(", ")[2]
-            zt = line3.split(", ")[3]
-            a = int(line3.split(", ")[4])
-            f.write(str(req3(wxyz, xt, yt, zt, a)))
-            f.write("\n")
-        cau3()
-
-        def cau4():
-            line4 = lines[3]
-            a = line4.split(", ")[0]
-            b = line4.split(", ")[1]
-            n = int(line4.split(", ")[2])
-            f.write(str(req4(a, b, n)))
-            f.write("\n")
-        cau4()
-
-        def cau5():
-            line5 = lines[4]
-            fxy = line5[:-1]
-            f.write(str(req5(fxy))[1:-1])
-            f.write("\n")
-        cau5()
-
-        def cau6():
-            line6 = lines[5]
-            input = line6[:-1]
-        #     line5 = lines[4]
-        #     fxy = line5.replace('\n', '')
-            f.write(req6(input))
-            f.write("\n")
-        cau6()
-
-        def cau7():
-            line7 = lines[6]
-            data = line7.split('],')
-            setX = data[0][1:].split(', ')
-            setY = data[1][2:].split(', ')
-            for i in range(len(setX)):
-                setX[i] = float(setX[i])
-                setY[i] = float(setY[i])
-            c = float(data[2])
-            f.write(str(req7(setX, setY, c)))
-            f.write("\n")
-        cau7()
-
-        def cau8():
-            line8 = lines[7]
-            fx = line8.split(', ')[0]
-            n = float(line8.split(', ')[1])
-            x0 = float(line8.split(', ')[2])
-            eps = float(line8.split(', ')[3])
-            f.write(str(req8(fx, n, x0, eps)))
-        cau8()
+    print(req1("x**2 + 2*x", "x**3", 1))
+    print(req2("x**2 + y**2 - 2*z**2 + z*log(z)", 1, 1, 1))
+    print(req3("x*y + z", "cos(t)", "sin(t)", "t", 0))
+    print(req4("2*x", -3, 4))
+    print(req5("x*y + 4"))
+    print(req6("[1,3,2],khi*nol"))
+    print(req7([-2, 0, 2], [0, 2, 3], 4))
+    print(req8("x**2 + 2*sin(x)", 0.1, -5, 1e-3))
 
 
 main()
